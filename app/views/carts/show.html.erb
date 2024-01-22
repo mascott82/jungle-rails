@@ -52,7 +52,9 @@
   
   <% else %>
     <!-- Display a friendly message and a link to the home page if the cart is empty -->
-    <p>Your cart is currently empty.</p>
-    <%= link_to "Go to Home Page", root_path, class: "btn btn-primary" %>
+    <div class="alert alert-info" role="alert">
+      <p>Your cart is currently empty.</p>
+      <%= link_to "Go to Home Page", root_path, class: "btn btn-primary" %>
+    </div>
   <% end %>  
 </section>
