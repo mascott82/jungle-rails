@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @order = current_user ? current_user.orders.build : Order.new
     charge = perform_stripe_charge
     order  = create_order(charge)
 

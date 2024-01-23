@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  http_basic_authenticate_with name: ENV['HTTP_BASIC_AUTH_USERNAME'].to_s, password: ENV['HTTP_BASIC_AUTH_PASSWORD'].to_s
+  before_action :authenticate_admin, except: [:index, :show]
 
   def index
     @products = Product.order(id: :desc).all
@@ -26,6 +26,11 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
+
+  def authenticate_admin
+    http_basic_authenticate_with name: ENV['HTTP_BASIC_AUTH_USERNAME'].to_s, 
+                                  password: ENV['HTTP_BASIC_AUTH_PASSWORD'].to_s
+  end
 
   def product_params
     params.require(:product).permit(
