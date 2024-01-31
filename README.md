@@ -1,6 +1,6 @@
-# Jungle
+# Jungle E-Commerce Application
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Jungle is a mini e-commerce application built with Rails 6.1. It serves as an example project for teaching Rails development. The application features product listings, user authentication, shopping cart functionality, and integrates with the Stripe API for payment processing.
 
 ## Setup
 
